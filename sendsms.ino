@@ -1,7 +1,7 @@
 #include <LGSM.h>
 
 const char* contact_no = "+37212345678";  // the number you will call
-
+  
 
 void setup()
 {
@@ -13,7 +13,7 @@ void setup()
       Serial.println(".");
     }
   Serial.println("GSM ready for sending SMS");
-  
+  //send SMS with text "Message"
   LSMS.beginSMS(contact_no);
   LSMS.print("Message");
   if (LSMS.endSMS()){
@@ -26,21 +26,5 @@ void setup()
 
 void loop()
 {
-while (LSMS.ready())
-  {
-    int v = c.read();
-    if (v != -1)
-    {
-      Serial.print((char)v);
-    }
-    else
-    {
-      Serial.println("SMS sent");
-      c.stop();
-      while (1)
-      {
-        delay(1);
-      }
-    }
-  }
+//add code to loop
 }
